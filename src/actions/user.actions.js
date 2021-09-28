@@ -3,7 +3,6 @@ import { firestore } from 'firebase';
 
 export const getRealtimeUsers = (uid) => {
 
-    //console.log('uid', uid)
 
     return async (dispatch) => {
 

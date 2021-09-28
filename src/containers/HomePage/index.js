@@ -52,6 +52,13 @@ const HomePage = (props) => {
         }
     }, []);
 
+    const initChat = (user) => {
+
+        setChatStarted(true)
+        setChatUser(`${user.firstName} ${user.lastName}`)
+        // setUserUid(user.uid);
+
+    }
 
     return (
         <Layout>
@@ -63,6 +70,7 @@ const HomePage = (props) => {
                             user.users.map(user => {
                                 return (
                                     <User
+                                        onClick={initChat}
                                         key={user.uid}
                                         user={user}
                                     />
@@ -71,9 +79,12 @@ const HomePage = (props) => {
                     }
                 </div>
                 <div className="chatArea">
-                    {
-                        chatStarted ? chatUser : ''
-                    }
+                    <div className="chatHeader">
+                        {
+                            chatStarted ? chatUser : ''
+                        }
+
+                    </div>
                     <div className="messageSections">
                         {
                             chatStarted ?
