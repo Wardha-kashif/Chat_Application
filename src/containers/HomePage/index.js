@@ -12,7 +12,9 @@ const User = (props) => {
 
     return (
         <div onClick={() => onClick(user)} className="displayName">
-           
+            <div className="displayPic">
+                <span>{user.firstName.charAt(0)}</span>
+            </div>
             <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', margin: '0 10px' }}>
                 <span style={{ fontWeight: 500 }}>{user.firstName} {user.lastName}</span>
                 <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}></span>
@@ -20,6 +22,7 @@ const User = (props) => {
         </div>
     );
 }
+
 
 const HomePage = (props) => {
     const dispatch = useDispatch();
@@ -50,7 +53,6 @@ const HomePage = (props) => {
     }, []);
 
 
-     
     return (
         <Layout>
             <section className="container">
@@ -61,7 +63,6 @@ const HomePage = (props) => {
                             user.users.map(user => {
                                 return (
                                     <User
-                                    
                                         key={user.uid}
                                         user={user}
                                     />
