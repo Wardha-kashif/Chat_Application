@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+.listOfUsers{
+    width: 30%;
+    height: 100%;
+    overflow-x: hidden;
+    border-right: 1px solid #ccc;
+}
+.chatArea{
+    width: 70%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+.chatHeader{
+    position: fixed;
+    width: 70%;
+    height: 40px;
+    background: #e2e0e0;
+    text-align: center;
+    line-height: 40px;
+    color: #000;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.chatControls{
+    display: flex;
+    position: fixed;
+    width: 70%;
+    height: 50px;
+    bottom: 0;
+}
+.chatControls textarea{
+    width: 90%;
+}
+.chatControls button{
+    width: 10%;
+}
+
+.displayName{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.displayName.active{
+    background: #ccc;
+}
+
