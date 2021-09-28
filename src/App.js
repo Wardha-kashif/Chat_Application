@@ -7,6 +7,7 @@ import RegisterPage from './containers/RegisterPage';
 import PrivateRoute from './components/PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import { isLoggedInUser } from './actions';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
 
 
   useEffect(() => {
-    if(!auth.authenticated){
+    if (!auth.authenticated) {
       dispatch(isLoggedInUser())
     }
   }, []);

@@ -5,7 +5,9 @@ import { signin, isLoggedInUser } from '../../actions';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button';
 /**
 * @author
 * @function LoginPage
@@ -19,28 +21,25 @@ const LoginPage = (props) => {
   const auth = useSelector(state => state.auth);
 
   useEffect(() => {
-    if(!auth.authenticated){
+    if (!auth.authenticated) {
       dispatch(isLoggedInUser())
     }
   }, []);
 
-
-
-
   const userLogin = (e) => {
     e.preventDefault();
 
-    if(email == ""){
+    if (email == "") {
       alert("Email is required");
       return;
     }
-    if(password == ""){
+    if (password == "") {
       alert("Password is required");
       return;
     }
 
     dispatch(signin({ email, password }));
-    
+
 
 
 
@@ -48,46 +47,48 @@ const LoginPage = (props) => {
   }
 
 
-  if(auth.authenticated){
+  if (auth.authenticated) {
     return <Redirect to={`/`} />
   }
 
 
 
 
-  return(
+  return (
     <Layout>
-      <div className="loginContainer">
-        <Card>
-          <form onSubmit={userLogin}>
-            
-            <input 
-              name="email"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>LOGIN FORM</Modal.Title>
+        </Modal.Header>
 
-            <input 
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
+        <Modal.Body>
+          <Form onSubmit={userLogin}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
 
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password
 
-            <div>
-              <button>Login</button>
-            </div>
-
-          </form>
-        </Card>
-      </div>
+              </Form.Label>
+              <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
+            <Button style={{ background: "#6D33FF" }} outline onClick={props.handlePrevious} type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal.Dialog>
     </Layout>
-   )
+  )
 
- }
+}
 
 export default LoginPage
