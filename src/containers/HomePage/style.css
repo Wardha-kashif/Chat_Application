@@ -6,13 +6,13 @@
     overflow: hidden;
 }
 .listOfUsers{
-    width: 30%;
+    width: 25%;
     height: 100%;
     overflow-x: hidden;
     border-right: 1px solid #ccc;
 }
 .chatArea{
-    width: 70%;
+    width: 75%;
     height: 100%;
     overflow-x: hidden;
     position: relative;
@@ -41,7 +41,6 @@
 .chatControls button{
     width: 10%;
 }
-
 .displayName{
     display: flex;
     align-items: center;
@@ -52,5 +51,18 @@
 
 .displayName.active{
     background: #ccc;
+}
+
+.onlineStatus{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 green;
+}
+.onlineStatus.off{
+    background: #16e316;
+    box-shadow: 0 0 0 0;
 }
 

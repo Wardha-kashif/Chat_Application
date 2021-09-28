@@ -28,7 +28,7 @@ export const getRealtimeUsers = (uid) => {
 
             });
 
-        // return unsubscribe;
+        return unsubscribe;
 
     }
 
