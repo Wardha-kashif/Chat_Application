@@ -3,3 +3,12 @@
     position: relative;
     margin: 50px auto;
 }
+
+#btn{
+    background-color:#6D33FF;
+    text-align: center;
+    margin-left: 160px;
+    color: white;
+    font-size: 15px;
+    /* font-weight: bold; */
+}

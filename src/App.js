@@ -1,3 +1,5 @@
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -27,10 +29,11 @@ function App() {
       <Router>
         {/* only logged in user can access this home route */}
         <PrivateRoute path="/" exact component={HomePage} />
-
+        
 
         <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={RegisterPage} />
+        
       </Router>
     </div>
   );

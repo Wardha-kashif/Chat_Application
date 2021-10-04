@@ -3,23 +3,24 @@
     position: absolute;
     width: 100%;
     height: calc(100% - 60px);
-    overflow: hidden;
+ 
 }
+
+
 .listOfUsers{
-    width: 25%;
+    width: 30%;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     border-right: 1px solid #ccc;
 }
 .chatArea{
-    width: 75%;
+    width: 70%;
     height: 100%;
-    overflow-x: hidden;
-    position: relative;
+     position: relative;
 }
 .chatHeader{
     position: fixed;
-    width: 70%;
+    width: 72%;
     height: 40px;
     background: #e2e0e0;
     text-align: center;
@@ -31,15 +32,28 @@
 .chatControls{
     display: flex;
     position: fixed;
-    width: 70%;
-    height: 50px;
+    width: 72%;
+    height: 60px;
     bottom: 0;
+    margin-left: 5px;
+   
 }
 .chatControls textarea{
     width: 90%;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    padding: 10px;
+    
 }
+
+textarea:focus {
+    background:#e2e0e0;
+  }
+
 .chatControls button{
     width: 10%;
+    border-radius: 25px;
+    margin-bottom: 5px;
 }
 
 .displayName{
@@ -57,7 +71,7 @@
 .displayName .displayPic{
     width: 50px;
     height: 50px;
-    /* /* overflow: hidden; */
+     overflow: hidden;
     border-radius: 30px; 
     background-color: #8b33ff;
     color:white;
@@ -88,8 +102,7 @@
 
 .messageSections{
     height: calc(100% - 90px);
-    width: 100%;
-    overflow-x: hidden;
+    width: 150%;
     position: relative;
     top: 40px;
 }

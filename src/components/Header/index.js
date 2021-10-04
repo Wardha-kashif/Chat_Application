@@ -14,15 +14,11 @@ const Header = (props) => {
   const auth = useSelector(state => state.auth);
   const dispatch = useDispatch();
 
-  // const logout = () => {
-  //   dispatch(logout())
-  // }
-
   return (
     <header className="header">
       <div style={{ display: 'flex' }}>
         <div className="logo">Chat Application</div>
-
+        {/* user not authenticated Ask him to Login/SignUp*/}
         {
           !auth.authenticated ?
             <ul className="leftMenu">
@@ -34,11 +30,12 @@ const Header = (props) => {
 
 
       </div>
-      <div style={{ margin: '20px 0', color: '#fff', fontWeight: 'bold' }}>
+      <div style={{ margin: '20px 0', marginLeft: '210px', color: '#fff', fontWeight: 'bold' }}>
         {auth.authenticated ? `Hi ${auth.firstName} ${auth.lastName}` : ''}
       </div>
-      <ul className="menu">
 
+      <ul className="menu">
+        {/* After login Show Logout */}
         {
           auth.authenticated ?
             <li>
